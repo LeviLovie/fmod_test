@@ -1,0 +1,11 @@
+[package]
+name = "fmod_test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.97"
+fmod-oxide = "2.2.0-pre.4"
+sdl2 = "0.37.0"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"

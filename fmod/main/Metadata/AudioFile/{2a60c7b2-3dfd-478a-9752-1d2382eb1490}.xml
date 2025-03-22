@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{92789d81-b1bb-4eb4-afd7-70e9d3a112ca}">
+	<object class="AudioFile" id="{2a60c7b2-3dfd-478a-9752-1d2382eb1490}">
 		<property name="assetPath">
 			<value>jump (2).wav</value>
 		</property>
@@ -14,7 +14,7 @@
 			<value>0.33709750566893426</value>
 		</property>
 		<relationship name="masterAssetFolder">
-			<destination>{e56525bb-dc11-401d-8850-8f2c52ab4bc4}</destination>
+			<destination>{b9a07184-6373-4a2c-99ad-6035da97854a}</destination>
 		</relationship>
 	</object>
 </objects>
