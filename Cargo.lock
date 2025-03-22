@@ -146,6 +146,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "fmod-oxide",
+ "lazy_static",
  "sdl2",
  "tracing",
  "tracing-subscriber",

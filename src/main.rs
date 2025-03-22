@@ -1,3 +1,5 @@
+mod path;
+
 use anyhow::{Error, Result};
 use fmod::c;
 use tracing::info;
@@ -19,14 +21,13 @@ fn main() -> Result<(), Error> {
     )?;
     info!("System created");
 
-    system.load_bank_file(
-        c!("fmod/Build/Desktop/Master.bank"),
-        fmod::studio::LoadBankFlags::NORMAL,
-    )?;
-    system.load_bank_file(
-        c!("fmod/Build/Desktop/Master.strings.bank"),
-        fmod::studio::LoadBankFlags::NORMAL,
-    )?;
+    let bank1_path_cstring = path::path("Master.bank");
+    let bank1_path = fmod::Utf8CStr::from_cstr(&bank1_path_cstring).unwrap();
+    system.load_bank_file(&bank1_path, fmod::studio::LoadBankFlags::NORMAL)?;
+    let bank2_path_cstring = path::path("Master.strings.bank");
+    let bank2_path = fmod::Utf8CStr::from_cstr(&bank2_path_cstring).unwrap();
+    system.load_bank_file(&bank2_path, fmod::studio::LoadBankFlags::NORMAL)?;
+
     info!("Banks loaded");
 
     info!("Loading event");
