@@ -10,7 +10,7 @@ fn main() -> Result<(), Error> {
 
     builder
         .core_builder()
-        .software_format(0, fmod::SpeakerMode::FivePointOne, 0)?;
+        .software_format(0, fmod::SpeakerMode::Stereo, 0)?;
 
     let system = builder.build(
         1024,
@@ -20,15 +20,16 @@ fn main() -> Result<(), Error> {
     info!("System created");
 
     system.load_bank_file(
-        c!("fmod/main/Build/Desktop/Master.bank"),
+        c!("fmod/Build/Desktop/Master.bank"),
         fmod::studio::LoadBankFlags::NORMAL,
     )?;
     system.load_bank_file(
-        c!("fmod/main/Build/Desktop/Master.strings.bank"),
+        c!("fmod/Build/Desktop/Master.strings.bank"),
         fmod::studio::LoadBankFlags::NORMAL,
     )?;
     info!("Banks loaded");
 
+    info!("Loading event");
     let event_jump_description = system.get_event(c!("event:/Jump"))?;
     let event_jump_instance = event_jump_description.create_instance()?;
     info!("Event created");
